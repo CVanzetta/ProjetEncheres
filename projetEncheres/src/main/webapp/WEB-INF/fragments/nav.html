@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<head>
+	<meta charset="UTF-8">
+</head>
+
+<nav  class="navbar bg-secondary" data-bs-theme="dark">
+		<div class="container-fluid">
+			<span class="navbar-brand mb-0 h1"><a href="${pageContext.request.contextPath}/encheres"><img src="${pageContext.request.contextPath}/resources/logo.png" alt="Logo" class="img-fluid rounded-circle" style="max-width: 100px; max-height: 80px;"></a>			
+			ENI-ENCHÈRES</span>
+			<div class="d-flex justify-content-start">
+				<c:if
+					test="${empty sessionScope.identifiant && empty sessionScope.userLoggedIn }">
+					<a href="${pageContext.request.contextPath}/SeConnecter" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">S'inscrire - Se connecter</a>
+				</c:if>
+				<c:if
+					test="${ !empty sessionScope.identifiant && !empty sessionScope.userLoggedIn }">
+					<p class="text-white">Bonjour ${ sessionScope.identifiant }</p>
+					<a href="${pageContext.request.contextPath}/ListeProfils" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Liste Utilisateurs</a>
+					<a href="${pageContext.request.contextPath}/encheres" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Enchères</a>
+					<a href="${pageContext.request.contextPath}/NouvelleVente" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Vendre un article</a>
+					<a href="${pageContext.request.contextPath}/MonProfil" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Mon profil</a>
+					<a href="${pageContext.request.contextPath}/TestServletDeconnexion" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Se déconnecter</a>
+				</c:if>
+			</div>
+		</div>
+	</nav>

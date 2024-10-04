@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+a {
+  	padding: 10px;
+}
+
+nav p{
+	padding: 10px;
+}
+
+.description-texte{
+	vertical-align: top;
+}
+
+
+label {
+	width : 150px;
+}
+
